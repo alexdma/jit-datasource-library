@@ -1,0 +1,10 @@
+{
+   "_id": "namespaces",
+   "description" : "A utility document for prefixes to be added to SPARQL queries and the like.",
+   "ecapi:prefixes" : {
+      "dbo"  : "http://dbpedia.org/ontology/",
+      "dbp"  : "http://dbpedia.org/property/",
+      "dbr"  : "http://dbpedia.org/resource/",
+      "foaf" : "http://xmlns.com/foaf/0.1/"
+   }
+}

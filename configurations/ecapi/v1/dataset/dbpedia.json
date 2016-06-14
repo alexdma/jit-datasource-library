@@ -1,0 +1,26 @@
+{
+   "_id": "dataset:dbpedia",
+   "type": "provider-spec",
+   "ecapi:types" {
+       "person" : {
+           "ecapi:microcompiler" : "function compile(e){var c='http://dbpedia.org/resource/';if(e.id){var r=c+caseName(e.id).replace(/\\s+/g,'_');if(e.occupation){var i='VALUES(?jit_x00){';return i+='(<'+encodeURI(r)+'>)',i+='(<'+encodeURI(r+'_('+e.occupation+')')+'>)',i+='} ?jit_x00'}}return encodeURI(r)};"
+       },
+       "*" : {
+           "ecapi:query_skeleton" : "<[id]> ?p ?o";
+       }
+   },
+   "ecapi:microcompilers": {
+       "id": "function compile(e){var n='http://dbpedia.org/resource/',o=n+caseName(e.id).replace(/\\s+/g,'_');return '<'+encodeURI(o)+'>'}",
+       "appellation": "function compile(e){ return 'dc:title|foaf:name \"'+caseName(e.appellation)+'\"' }",
+       "club" : "function compile(e){ return 'foaf:name \"'+caseName(e.club)+'\"' }",
+   },
+   "ecapi:query_skeletons": {
+       "club" : " ?[x]? dbo:managerClub|dbp:club [ <[club]> ]",
+       "filmwork" : "?[x]? ^(dbo:director|dbo:starring|dbo:writer) ?filmwork"
+   },
+   "ecapi:specs": [{
+       "type" : "void",
+       "location" : "http://dbpedia.org/void/Dataset"
+   }],
+   "comment": "VALUES statement not supported by vanilla FedX"
+}
