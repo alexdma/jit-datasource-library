@@ -1,12 +1,12 @@
 {
    "_id": "dataset:dbpedia",
    "type": "provider-spec",
-   "ecapi:types" {
+   "ecapi:types" : {
        "person" : {
            "ecapi:microcompiler" : "function compile(e){var c='http://dbpedia.org/resource/';if(e.id){var r=c+caseName(e.id).replace(/\\s+/g,'_');if(e.occupation){var i='VALUES(?jit_x00){';return i+='(<'+encodeURI(r)+'>)',i+='(<'+encodeURI(r+'_('+e.occupation+')')+'>)',i+='} ?jit_x00'}}return encodeURI(r)};"
        },
        "*" : {
-           "ecapi:query_skeleton" : "<[id]> ?p ?o";
+           "ecapi:query_skeleton" : "<[id]> ?p ?o"
        }
    },
    "ecapi:microcompilers": {
