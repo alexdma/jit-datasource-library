@@ -5,6 +5,8 @@
       "dbo"  : "http://dbpedia.org/ontology/",
       "dbp"  : "http://dbpedia.org/property/",
       "dbr"  : "http://dbpedia.org/resource/",
-      "foaf" : "http://xmlns.com/foaf/0.1/"
+      "foaf" : "http://xmlns.com/foaf/0.1/",
+      "lmdb" : "http://data.linkedmdb.org/resource/movie/",
+      "owl"  : "http://www.w3.org/2002/07/owl#"
    }
 }

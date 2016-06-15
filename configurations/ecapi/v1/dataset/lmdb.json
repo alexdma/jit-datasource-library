@@ -1,0 +1,20 @@
+{
+   "_id": "dataset:lmdb",
+   "type": "provider-spec",
+   "ecapi:types" : {
+       "person" : {
+         "ecapi:query_skeleton" : "<[appellation]> ?p ?o"
+       }
+   },
+   "ecapi:microcompilers": {
+       "appellation" : "function compile(e){var t=function(e){return e.replace(/_/g,' ').replace(/\\w\\S*/g,function(e){return e.charAt(0).toUpperCase()+e.substr(1).toLowerCase()})},n='',o='';switch(e.type){case'person':n=' a foaf:Person ;'}return o=t(e.appellation).replace(/_+/g,' '),' VALUES(?pp){ (lmdb:actor_name)(lmdb:director_name)(lmdb:editor_name) }[ '+n+' ?pp \"\"\"'+o+'\"\"\" ]'}",
+       "from": "function compile(e){ return ' SERVICE SILENT <http://dbpedia.org/sparql> { ?x dbo:nationality <> } . ?mov lmdb:director ?ldir . ?ldir owl:sameAs ?x' }"
+   },
+   "ecapi:query_skeletons": {
+       "filmwork" : "{ ?[x]? foaf:made ?filmwork } UNION { ?filmwork lmdb:director ?[x]? } UNION { ?filmwork lmdb:actor ?[x]? } UNION { ?filmwork lmdb:writer ?[x]? }"
+   },
+   "ecapi:specs": [{
+       "type" : "ckan",
+       "location" : "https://datahub.io/dataset/linkedmdb/datapackage.json"
+   }]
+}
