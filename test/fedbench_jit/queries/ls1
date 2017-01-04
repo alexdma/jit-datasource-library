@@ -1,0 +1,8 @@
+### Lists the values of a property for all the entities that have one.
+##
+## SELECT ?drug ?melt WHERE {
+##   { ?drug drugbank:meltingPoint ?melt . }
+##  UNION
+##   { ?drug dbpedia-owl-drug:meltingPoint ?melt . } }
+##
+meltingpoint/*?meltingpoint

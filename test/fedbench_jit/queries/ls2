@@ -1,0 +1,10 @@
+### Gets the description (all predicates and values) of an entity and all its equivalents.
+##
+## SELECT ?predicate ?object WHERE { 
+##   { <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00201> ?predicate ?object
+##   } UNION { <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00201> 
+##       owl:sameAs> ?caff 
+##     . ?caff ?predicate ?object
+##   } }
+##
+id/drug:DB00201

@@ -1,0 +1,12 @@
+### Lists the values of a property for all the entities that have one.
+##
+## SELECT ?Drug ?IntDrug ?IntEffect WHERE {
+##   ?Drug rdf:type dbpedia-owl:Drug .
+##   ?y owl:sameAs ?Drug .
+##   ?Int drugbank:interactionDrug1 ?y .
+##   ?Int drugbank:interactionDrug2 ?IntDrug .
+##   ?Int drugbank:text ?IntEffect . }
+##
+### The conversion from drugbank properties is handled by the 
+### microcompiler for the drugbank dataset. Similarly for the type dbpedia-owl:Drug
+type/drug?interaction1&interaction2&description
